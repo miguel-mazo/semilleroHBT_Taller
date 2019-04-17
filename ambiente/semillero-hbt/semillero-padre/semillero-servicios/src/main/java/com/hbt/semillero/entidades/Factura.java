@@ -2,6 +2,7 @@ package com.hbt.semillero.entidades;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -38,12 +39,45 @@ public class Factura implements Serializable {
 	
 	@Column(name = "TOTAL")
 	private BigDecimal total;
-
+	
+	@Column(name = "FECHA_PEDIDO")
+	private Date fechaPedido;
+	
+	@Column(name = "TIPO_PEDIDO")
+	private int tipoPedido;
+	
+	@Column(name = "METODO_PAGO")
+	private int metodoPago;
+			
 	/**
 	 * Métodos de acceso y modificadores de atributos
 	 * @return
 	 */
 	
+	public Date getFechaPedido() {
+		return fechaPedido;
+	}
+
+	public void setFechaPedido(Date fechaPedido) {
+		this.fechaPedido = fechaPedido;
+	}
+
+	public int getTipoPedido() {
+		return tipoPedido;
+	}
+
+	public void setTipoPedido(int tipoPedido) {
+		this.tipoPedido = tipoPedido;
+	}
+
+	public int getMetodoPago() {
+		return metodoPago;
+	}
+
+	public void setMetodoPago(int metodoPago) {
+		this.metodoPago = metodoPago;
+	}
+
 	public Long getFacturaId() {
 		return facturaId;
 	}
@@ -60,32 +94,19 @@ public class Factura implements Serializable {
 		this.clienteId = clienteId;
 	}
 
-	/**
-	 * Método encargado de obtener el valor de un atributo
-	 * @return the iva
-	 */
 	public BigDecimal getIva() {
 		return iva;
 	}
 
-	/**
-	 * @param iva the iva to set
-	 */
 	public void setIva(BigDecimal iva) {
 		this.iva = iva;
 	}
 
-	/**
-	 * Método encargado de obtener el valor de un atributo
-	 * @return the total
-	 */
+	
 	public BigDecimal getTotal() {
 		return total;
 	}
-
-	/**
-	 * @param total the total to set
-	 */
+	
 	public void setTotal(BigDecimal total) {
 		this.total = total;
 	}

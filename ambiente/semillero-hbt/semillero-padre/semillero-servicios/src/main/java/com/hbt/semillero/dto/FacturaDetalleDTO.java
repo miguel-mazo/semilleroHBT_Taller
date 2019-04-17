@@ -17,16 +17,34 @@ public class FacturaDetalleDTO implements Serializable {
 	private String detalleId;
 	
 	//Identificador único de la factura
-	private Factura facturaId;
+	private Long facturaId;
 	
 	//Identificador único del plato
-	private Plato platoId;
+	private Long platoId;
 	
 	//Identificador único de la bebida	
-	private Bebida bebidaId;
+	private Long bebidaId;
 	
 	//Precio unitario
 	private BigDecimal precioUnitario;
+	
+	//Cantidad
+	private BigDecimal cantidad;
+		
+	/**
+	 * Método que obtiene el valor de la propiedad cantidad
+	 * @return the cantidad
+	 */
+	public BigDecimal getCantidad() {
+		return cantidad;
+	}
+
+	/**Método que asigna el valor de la propiedad cantidad
+	 * @param cantidad the cantidad to set
+	 */
+	public void setCantidad(BigDecimal cantidad) {
+		this.cantidad = cantidad;
+	}
 
 	/**
 	 * Método que obtiene el valor de la propiedad detalleId
@@ -48,7 +66,7 @@ public class FacturaDetalleDTO implements Serializable {
 	 * Método que obtiene el valor de la propiedad facturaId
 	 * @return
 	 */
-	public Factura getFacturaId() {
+	public Long getFacturaId() {
 		return facturaId;
 	}
 
@@ -56,7 +74,7 @@ public class FacturaDetalleDTO implements Serializable {
 	 * Método que asigna el valor de la propiedad facturaId
 	 * @param facturaId
 	 */
-	public void setFacturaId(Factura facturaId) {
+	public void setFacturaId(Long facturaId) {
 		this.facturaId = facturaId;
 	}
 
@@ -64,7 +82,7 @@ public class FacturaDetalleDTO implements Serializable {
 	 * Método que obtiene el valor de la propiedad platoId
 	 * @return
 	 */
-	public Plato getPlatoId() {
+	public Long getPlatoId() {
 		return platoId;
 	}
 
@@ -72,7 +90,7 @@ public class FacturaDetalleDTO implements Serializable {
 	 * Método que asigna el valor de la propiedad platoId
 	 * @param platoId
 	 */
-	public void setPlatoId(Plato platoId) {
+	public void setPlatoId(Long platoId) {
 		this.platoId = platoId;
 	}
 	
@@ -80,7 +98,7 @@ public class FacturaDetalleDTO implements Serializable {
 	 * Método que obtiene el valor de la propiedad bebidaId
 	 * @return
 	 */
-	public Bebida getBebidaId() {
+	public Long getBebidaId() {
 		return bebidaId;
 	}
 
@@ -88,12 +106,12 @@ public class FacturaDetalleDTO implements Serializable {
 	 * Método que asigna el valor de la propiedad bebidaId
 	 * @param bebidaId
 	 */
-	public void setBebidaId(Bebida bebidaId) {
+	public void setBebidaId(Long bebidaId) {
 		this.bebidaId = bebidaId;
 	}
 
 	/**
-	 * Método encargado de obtener el valor de un atributo
+	 * Método que obtiene el valor de la propiedad precioUnitario
 	 * @return the precioUnitario
 	 */
 	public BigDecimal getPrecioUnitario() {
@@ -101,6 +119,7 @@ public class FacturaDetalleDTO implements Serializable {
 	}
 
 	/**
+	 * Método que asigna el valor de la propiedad precioUnitario
 	 * @param precioUnitario the precioUnitario to set
 	 */
 	public void setPrecioUnitario(BigDecimal precioUnitario) {

@@ -1,0 +1,43 @@
+<section>
+  <label for="name">Nombre del cliente</label>
+  <input name="name" type="text" placeholder="Nombre cliente" />
+</section>
+
+<section>
+  <label for="name">Id. Cliente</label>
+  <input name="name" type="text" placeholder="Identificación del cliente" />
+</section>
+
+<section>
+  <label for="name">Bebidas</label>
+  <select [(ngModel)]="bebidas" (change)="consultarBebidas()">
+    <option *ngFor="let bebida of bebidas" [value]="bebida.bebidaNombre">{{bebida.bebidaNombre}}</option>
+  </select>
+</section>
+
+<section>
+  <label for="name">Platos</label>
+  <select [(ngModel)]="platos" (change)="consultarPlatos()">
+    <option *ngFor="let plato of platos" [value]="plato.platoNombre">{{plato.platoNombre}}</option>
+  </select>
+</section>
+
+<section>
+  <label for="metodoPago">Método de pago: </label>
+  <input name="metodoPago" value="1" type="radio" [(ngModel)]="facturaDetalle.metodoPago" />
+  <i>Efectivo</i>
+  <input name="metodoPago" value="0" type="radio" [(ngModel)]="facturaDetalle.metodoPago" />
+  <i>Tarjeta</i>
+</section>
+
+<section>
+  <label for="tipoPedido">Consumo: </label>
+  <input name="tipoPedido" value="1" type="radio" [(ngModel)]="facturaDetalle.tipoPedido" />
+  <i>Sitio</i>
+  <input name="tipoPedido" value="0" type="radio" [(ngModel)]="facturaDetalle.tipoPedido" />
+  <i>Llevar</i>
+</section>
+
+<section>
+  <button (click)="Registrar()">Ingresar</button>
+</section>

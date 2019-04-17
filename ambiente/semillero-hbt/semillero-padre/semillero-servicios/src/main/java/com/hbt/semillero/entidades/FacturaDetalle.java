@@ -41,6 +41,9 @@ public class FacturaDetalle implements Serializable {
 	
 	@Column(name = "PRECIO_UNITARIO")
 	private BigDecimal precioUnitario;
+	
+	@Column(name = "CANTIDAD")
+	private BigDecimal cantidad;
 
 	/**
 	 * Métodos de acceso y modificadores de atributos
@@ -78,21 +81,21 @@ public class FacturaDetalle implements Serializable {
 	public void setBebidaId(Bebida bebidaId) {
 		this.bebidaId = bebidaId;
 	}
-
-	/**
-	 * Método encargado de obtener el valor de un atributo
-	 * @return the precioUnitario
-	 */
+	
 	public BigDecimal getPrecioUnitario() {
 		return precioUnitario;
 	}
 
-	/**
-	 * @param precioUnitario the precioUnitario to set
-	 */
 	public void setPrecioUnitario(BigDecimal precioUnitario) {
 		this.precioUnitario = precioUnitario;
 	}
 
+	public BigDecimal getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(BigDecimal cantidad) {
+		this.cantidad = cantidad;
+	}
 		
 }
